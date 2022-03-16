@@ -14,9 +14,9 @@ public:
             {
                 int temp = image[layer * width + i];
                 image[layer * width + i] = image[i * width + last];
-                image[i * width + last] = image[last * width + (last - i)];
-                image[last * width + (last - i)] = image[(last - i) * width + layer];
-                image[(last - i) * width + layer] = temp;
+                image[i * width + last] = image[last * width + (last - i + first)];
+                image[last * width + (last - i + first)] = image[(last - i + first) * width + layer];
+                image[(last - i + first) * width + layer] = temp;
             }
         }
     }
